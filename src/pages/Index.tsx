@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,8 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { Upload, Play, Download, Sparkles, Zap } from "lucide-react";
+import { Upload, Play, Download, Sparkles, Zap, Wand2 } from "lucide-react";
 import { FREE_MODE_LIMITS, PREMIUM_MODE_LIMITS } from "@/config/constants";
+import { Link } from "react-router-dom";
 
 export default function Index() {
   const [selectedFiles, setSelectedFiles] = useState<FileList | null>(null);
@@ -85,6 +85,16 @@ export default function Index() {
           <p className="text-lg text-gray-600">
             Transform your images into smooth animations with AI-powered frame interpolation
           </p>
+          
+          {/* Navigation */}
+          <div className="mt-6">
+            <Link to="/image-generator">
+              <Button variant="outline" className="mr-4">
+                <Wand2 className="w-4 h-4 mr-2" />
+                Try Sketch to Image Generator
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Mode Toggle */}
